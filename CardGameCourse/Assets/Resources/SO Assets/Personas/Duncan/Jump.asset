@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41e206fc57f453a42b932de9e94caabf, type: 3}
+  m_Name: Jump
+  m_EditorClassIdentifier: 
+  characterAsset: {fileID: 11400000, guid: 38b29af149eb525439684c0b9ae4f5ad, type: 2}
+  Description: 'DODGE: With a flair of acrobatics, you jump out of the way and dodge
+    this attack. Your next attack this turn is Hidden.'
+  Tags: 
+  Rarity: 2
+  CardImage: {fileID: 21300000, guid: 5e222c0b84bea064787a7d153b325812, type: 3}
+  ManaCost: 0
+  TokenCard: 0
+  OverrideLimitOfThisCardInDeck: -1
+  TypeOfCard: 0
+  GridImage: {fileID: 21300000, guid: 64e0599888d83fa4e8ffe60aa3904836, type: 3}
+  GridData: 0,0,0,-1,-1,-1,-1,-1,-1
+  MaxHealth: 1
+  Attack: 0
+  AttacksForOneTurn: 1
+  Charge: 0
+  CreatureScriptName: 
+  specialCreatureAmount: 0
+  SpellScriptName: 
+  ConditionCheckName: 
+  RemoveEffectName: 
+  DefenseEffectName: NextAttackHidden
+  specialSpellAmount: 0
+  Targets: 0
+  PlotName: 
+  ObjectName: 
+  SpecialData: 
+  AttackDefense: D
+  ModifiedDamageAmt: 0
+  AdditionalDamageAmt: 0
+  TypeOfAttack: 5
+  CanBePowerBlow: 0
+  SpecialAction: 0
+  TypeOfSpecial: 0
+  SweepAttack: 0
+  SweepDefense: 1
+  SweepSpecial: 0
+  HasConditionCheck: 0

@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 917561878a8602640ab159ede231f37f, type: 3}
+  m_Name: Kalas
+  m_EditorClassIdentifier: 
+  Class: 0
+  ClassName: 
+  MaxHealth: 16
+  MaxAttacksPerTurn: 1
+  AttackAreasBlocked: 0
+  PersonaAbilityButton: 0
+  GuardInPlay: 0
+  NormalAttack: 3
+  PowerAttack: 5
+  HeroPowerName: 
+  PersonaAblConditionChk: 
+  PersonaAbility: 
+  AvatarImage: {fileID: 21300000, guid: eeac029460ca0bd458625ce65a6b677f, type: 3}
+  PersonaBackImage: {fileID: 0}
+  HeroPowerIconImage: {fileID: 0}
+  AvatarBGImage: {fileID: 0}
+  HeroPowerBGImage: {fileID: 0}
+  AvatarBGTint:
+    serializedVersion: 2
+    rgba: 0
+  HeroPowerBGTint:
+    serializedVersion: 2
+    rgba: 0
+  ClassCardTint:
+    serializedVersion: 2
+    rgba: 0
+  ClassRibbonsTint:
+    serializedVersion: 2
+    rgba: 0
+  TitleBar: {fileID: 0}
+  BodyImage: {fileID: 0}

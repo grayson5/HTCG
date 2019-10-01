@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41e206fc57f453a42b932de9e94caabf, type: 3}
+  m_Name: Upper Center Attack
+  m_EditorClassIdentifier: 
+  characterAsset: {fileID: 0}
+  Description: If your opponent played a Power Blow last turn, you may make your first
+    attack this turn Hidden. You may make a Hard Exertion to make this attack a Power
+    Blow.
+  Tags: 
+  Rarity: 0
+  CardImage: {fileID: 21300000, guid: 67f51fdadd561ec46b076a8a043d4b9a, type: 3}
+  ManaCost: 0
+  TokenCard: 0
+  OverrideLimitOfThisCardInDeck: -1
+  TypeOfCard: 0
+  GridImage: {fileID: 21300000, guid: 69c7729ca0c307c479a7253643e12bb2, type: 3}
+  GridData: 0,1,0,0,0,0,0,0,0
+  MaxHealth: 1
+  Attack: 0
+  AttacksForOneTurn: 1
+  Targets: 0
+  CreatureScriptName: 
+  specialCreatureAmount: 0
+  SpecialScriptName: 
+  SecondSpecialName: 
+  ConditionCheckName: 
+  RemoveEffectName: 
+  DefenseEffectName: 
+  PlotName: 
+  ObjectName: 
+  SpecialData: 
+  specialSpellAmount: 0
+  secondSpecialAmount: 0
+  AttackDefense: A
+  ModifiedDamageAmt: 0
+  AdditionalDamageAmt: 0
+  TypeOfAttack: 0
+  CanBePowerBlow: 1
+  SpecialAction: 0
+  TypeOfSpecial: 0
+  SweepAttack: 1
+  SweepDefense: 0
+  SweepSpecial: 0
+  HasConditionCheck: 0

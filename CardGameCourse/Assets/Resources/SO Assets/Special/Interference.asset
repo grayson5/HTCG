@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41e206fc57f453a42b932de9e94caabf, type: 3}
+  m_Name: Interference
+  m_EditorClassIdentifier: 
+  characterAsset: {fileID: 0}
+  Description: 'EVENT: Target must discard 2 cards.'
+  Tags: 
+  Rarity: 1
+  CardImage: {fileID: 21300000, guid: 3443aab15e2079441a7d5e77f134eefa, type: 3}
+  ManaCost: 0
+  TokenCard: 0
+  OverrideLimitOfThisCardInDeck: -1
+  TypeOfCard: 1
+  GridImage: {fileID: 21300000, guid: 3b7f780f47e132447a7c6b458893b6cb, type: 3}
+  GridData: 
+  MaxHealth: 0
+  Attack: 0
+  AttacksForOneTurn: 1
+  Targets: 4
+  CreatureScriptName: 
+  specialCreatureAmount: 1
+  SpecialScriptName: TargetDiscardCard
+  SecondSpecialName: 
+  ConditionCheckName: 
+  RemoveEffectName: 
+  DefenseEffectName: 
+  PlotName: 
+  ObjectName: 
+  SpecialData: C
+  specialSpellAmount: 2
+  secondSpecialAmount: 0
+  AttackDefense: S
+  ModifiedDamageAmt: 0
+  AdditionalDamageAmt: 0
+  TypeOfAttack: 0
+  CanBePowerBlow: 0
+  SpecialAction: 0
+  TypeOfSpecial: 0
+  SweepAttack: 0
+  SweepDefense: 0
+  SweepSpecial: 1
+  HasConditionCheck: 0

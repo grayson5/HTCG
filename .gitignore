@@ -4,6 +4,8 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+HIGHLA~1/
+Highlander Test Build/
 
 # Visual Studio cache directory
 .vs/

@@ -1,0 +1,5 @@
+Need to use ConditionEffect class and make PersonaCondEffect class
+then add public PersonaCondEffect pcheckcond to player class as public
+then add system.activator (like cardlogic.cs) to TurnManager
+then add function in player to execute when abilitybutton is pushed
+this function will check execute script in PersonaCondEffect

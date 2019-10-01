@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 917561878a8602640ab159ede231f37f, type: 3}
+  m_Name: Nefertiri
+  m_EditorClassIdentifier: 
+  Class: 0
+  ClassName: 
+  MaxHealth: 15
+  MaxAttacksPerTurn: 1
+  AttackAreasBlocked: 0
+  PersonaAbilityButton: 1
+  GuardInPlay: 0
+  NormalAttack: 2
+  PowerAttack: 4
+  HeroPowerName: 
+  PersonaAblConditionChk: 
+  PersonaAbility: 
+  AvatarImage: {fileID: 21300000, guid: 45b87c1db7708ae46b073ee731f9d74d, type: 3}
+  PersonaBackImage: {fileID: 21300000, guid: afea54626eb02f84abbe1db6a2a744eb, type: 3}
+  HeroPowerIconImage: {fileID: 0}
+  AvatarBGImage: {fileID: 0}
+  HeroPowerBGImage: {fileID: 0}
+  AvatarBGTint:
+    serializedVersion: 2
+    rgba: 4278190080
+  HeroPowerBGTint:
+    serializedVersion: 2
+    rgba: 0
+  ClassCardTint:
+    serializedVersion: 2
+    rgba: 4284123896
+  ClassRibbonsTint:
+    serializedVersion: 2
+    rgba: 0
+  TitleBar: {fileID: 21300000, guid: 867857228e1a13948a61214cabe518eb, type: 3}
+  BodyImage: {fileID: 21300000, guid: 966ad58e1ef970246b7d772909c49e11, type: 3}
