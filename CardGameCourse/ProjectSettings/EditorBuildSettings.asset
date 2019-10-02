@@ -11,12 +11,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Battlescene.unity
     guid: 336b5c7b3bef5c547939f8abf05f41e2
-  - enabled: 1
+  - enabled: 0
     path: Assets/MenuScene.unity
     guid: 1178795bebfe3364d931a87c2a3cbbf1
-  - enabled: 1
+  - enabled: 0
     path: Assets/BattlescenePC.unity
     guid: 5e23c42177de2ce4a89f5362d0cbff8c
+  - enabled: 1
+    path: Assets/MenuSceneiOS.unity
+    guid: f5d46b9092f85fd49ad4e0d6f9a2d2c8
   - enabled: 1
     path: Assets/BattlesceneiOS.unity
     guid: 88d1d632b229b214484ae562f2724e3e

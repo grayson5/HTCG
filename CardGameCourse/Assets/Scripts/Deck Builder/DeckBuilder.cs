@@ -196,8 +196,8 @@ public class DeckBuilder : MonoBehaviour
         ca = CardCollection.Instance.GetCardAssetByName("Upper Right Block");
         DeckBuildingScreen.Instance.BuilderScript.AddCard(ca);
 
-        //ca = CardCollection.Instance.GetCardAssetByName("Lower Left Block");
-        //DeckBuildingScreen.Instance.BuilderScript.AddCard(ca);
+        ca = CardCollection.Instance.GetCardAssetByName("Lower Left Block");
+        DeckBuildingScreen.Instance.BuilderScript.AddCard(ca);
 
         ca = CardCollection.Instance.GetCardAssetByName("Lower Center Block");
         DeckBuildingScreen.Instance.BuilderScript.AddCard(ca);

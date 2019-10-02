@@ -172,6 +172,7 @@ public class PackOpeningArea : MonoBehaviour {
             card = Instantiate(SpecialCardFromPackPrefab) as GameObject;
 
         card.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+        //card.transform.DOScale(.75f, 1f);
         OneCardManager manager = card.GetComponent<OneCardManager>();
         manager.cardAsset = a;
         manager.ReadCardFromAsset();

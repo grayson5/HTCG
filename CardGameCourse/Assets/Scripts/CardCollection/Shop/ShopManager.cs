@@ -11,8 +11,8 @@ public class ShopManager : MonoBehaviour {
     public int PackPrice;
     public Transform PacksParent;
     public Transform InitialPackSpot;
-    public float PosXRange = 2f;
-    public float PosYRange = 3f;
+    public float PosXRange = .5f;
+    public float PosYRange = 1f;
     public float RotationRange = 10f;
     public Text MoneyText;
     public Text DustText;
