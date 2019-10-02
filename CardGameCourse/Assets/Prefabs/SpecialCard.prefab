@@ -717,7 +717,6 @@ MonoBehaviour:
   CardFaceFrameImage: {fileID: 114865146712410380}
   CardFaceGlowImage: {fileID: 114499554153562510}
   CardBackGlowImage: {fileID: 0}
-  RarityStoneImage: {fileID: 0}
 --- !u!114 &114041684778527150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1419,7 +1418,6 @@ MonoBehaviour:
   CardFaceFrameImage: {fileID: 114519247739158176}
   CardFaceGlowImage: {fileID: 114514101369947428}
   CardBackGlowImage: {fileID: 0}
-  RarityStoneImage: {fileID: 0}
 --- !u!114 &114865146712410380
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1848,7 +1846,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: -1109326307
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!223 &223953670835300280
 Canvas:
@@ -1867,8 +1865,8 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 1165773345
-  m_SortingOrder: 0
+  m_SortingLayerID: -1109326307
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!224 &224011241734610998
 RectTransform:

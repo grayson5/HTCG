@@ -30,7 +30,7 @@ MonoBehaviour:
   HeroPowerBGImage: {fileID: 0}
   AvatarBGTint:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4294111994
   HeroPowerBGTint:
     serializedVersion: 2
     rgba: 0

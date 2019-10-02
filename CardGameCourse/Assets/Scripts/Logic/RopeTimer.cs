@@ -72,7 +72,7 @@ public class RopeTimer : MonoBehaviour, IEventSystemHandler
 			{
 				counting = false;
                 //RopeGameObject.SetActive(false);
-                TimerExpired.Invoke();
+                //TimerExpired.Invoke();
 			}
 		}
 	

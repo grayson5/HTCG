@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Challenge
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
-  Description: 'EVENT: TNo dodges may be played until the end of your next turn.'
+  Description: 'EVENT: No dodges may be played until the end of your next turn.'
   Tags: 
   Rarity: 1
   CardImage: {fileID: 21300000, guid: 44efcd10e53580c40bd17550dbb3e1fc, type: 3}

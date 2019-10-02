@@ -22,6 +22,7 @@ MonoBehaviour:
   PowerAttack: 4
   HeroPowerName: 
   PersonaAblConditionChk: 
+  PersonaAbility: 
   AvatarImage: {fileID: 21300000, guid: 4f8992003effeb04386b1b55db120e05, type: 3}
   PersonaBackImage: {fileID: 21300000, guid: 796fa6d4d8b37164a95a32cd91d4a25d, type: 3}
   HeroPowerIconImage: {fileID: 0}

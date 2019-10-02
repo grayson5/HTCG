@@ -13,6 +13,7 @@ public class HoverPreview: MonoBehaviour
 
     // PRIVATE FIELDS
     private static HoverPreview currentlyViewing = null;
+    private Canvas canvas;
 
     // PROPERTIES WITH UNDERLYING PRIVATE FIELDS
     private static bool _PreviewsAllowed = true;
@@ -49,9 +50,18 @@ public class HoverPreview: MonoBehaviour
     {
         ThisPreviewEnabled = ActivateInAwake;
     }
-            
+
+    private void OnMouseDown()
+    {
+        Debug.Log("In OnMouseDown");
+        OverCollider = true;
+        if (PreviewsAllowed && ThisPreviewEnabled)
+            PreviewThisObject();
+    }
+
     void OnMouseEnter()
     {
+        Debug.Log("In OnMouseEnter");
         OverCollider = true;
         if (PreviewsAllowed && ThisPreviewEnabled)
             PreviewThisObject();
@@ -77,13 +87,21 @@ public class HoverPreview: MonoBehaviour
         previewGameObject.SetActive(true);
         // 4) disable if we have what to disable
         if (TurnThisOffWhenPreviewing!=null)
-            TurnThisOffWhenPreviewing.SetActive(false); 
+            TurnThisOffWhenPreviewing.SetActive(false);
+        canvas = GetComponentInChildren<Canvas>();
+        canvas.sortingLayerName = "AboveEverything";
+        canvas.sortingOrder = 100;
         // 5) tween to target position
         previewGameObject.transform.localPosition = Vector3.zero;
         previewGameObject.transform.localScale = Vector3.one;
 
+        //Debug.Log("SO: " + canvas.sortingLayerName);
+        //Debug.Log("SO: " + canvas.sortingOrder);
+
+
         previewGameObject.transform.DOLocalMove(TargetPosition, 1f).SetEase(Ease.OutQuint);
         previewGameObject.transform.DOScale(TargetScale, 1f).SetEase(Ease.OutQuint);
+
     }
 
     void StopThisPreview()
