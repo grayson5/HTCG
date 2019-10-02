@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DeckSelectionScreen : MonoBehaviour {
 
@@ -52,5 +53,14 @@ public class DeckSelectionScreen : MonoBehaviour {
     public void HideScreen()
     {
         ScreenContent.SetActive(false);
+    }
+
+    public void RunPlayTestBattle()
+    {
+#if UNITY_IOS
+        SceneManager.LoadScene("BattlesceneiOS");
+#elif UNITY_STANDALONE_WIN
+        SceneManager.LoadScene("BattlescenePC");
+#endif
     }
 }
