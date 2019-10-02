@@ -64,7 +64,7 @@ public class Player : MonoBehaviour, ICharacter
 
     // list of all the creature cards on the table as GameObjects
     private List<GameObject> CreaturesOnTable = new List<GameObject>();
-    private Canvas canvas;
+    //private Canvas canvas;
     private CardLogic SavedPlayedCard;
 
     // PROPERTIES 
@@ -173,8 +173,8 @@ public class Player : MonoBehaviour, ICharacter
         Debug.Log("MustMayAction: " + MustOrMayAction);
         Debug.Log("CanAttack: " + CanAttackThisTurn);
 
-        canvas = PArea.PDeck.GetComponentInChildren<Canvas>();
-        Debug.Log("-----> Deck: " + canvas.sortingLayerName);
+        //canvas = PArea.PDeck.GetComponentInChildren<Canvas>();
+        //Debug.Log("-----> Deck: " + canvas.sortingLayerName);
         usedHeroPowerThisTurn = false;
         playedSpecialCardThisTurn = false;
         ProcessEventCard = false;
