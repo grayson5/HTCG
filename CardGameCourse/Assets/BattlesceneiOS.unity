@@ -746,7 +746,7 @@ GameObject:
   m_Component:
   - component: {fileID: 162234076}
   - component: {fileID: 162234072}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Deck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1065,7 +1065,7 @@ GameObject:
   - component: {fileID: 206076092}
   - component: {fileID: 206076091}
   - component: {fileID: 206076090}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1150,7 +1150,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 1165773345
+  m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &209741137
@@ -1205,7 +1205,7 @@ GameObject:
   - component: {fileID: 229024532}
   - component: {fileID: 229024534}
   - component: {fileID: 229024533}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: CardBackPicture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2005,7 +2005,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 319456041}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: CardBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3263,10 +3263,6 @@ Prefab:
     - target: {fileID: 4134684019030526, guid: 9597b56fefc632f4abd7ddd392fbe012, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1284213534808682, guid: 9597b56fefc632f4abd7ddd392fbe012, type: 2}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9597b56fefc632f4abd7ddd392fbe012, type: 2}
@@ -5729,7 +5725,7 @@ GameObject:
   m_Component:
   - component: {fileID: 996079159}
   - component: {fileID: 996079158}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: CardPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6611,7 +6607,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4733439202232004, guid: 3557b285f11b04144ac198625561737d, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 7.3740106
+      value: 7.374011
       objectReference: {fileID: 0}
     - target: {fileID: 4733439202232004, guid: 3557b285f11b04144ac198625561737d, type: 2}
       propertyPath: m_LocalRotation.x
@@ -8497,7 +8493,7 @@ GameObject:
   - component: {fileID: 1524388259}
   - component: {fileID: 1524388258}
   - component: {fileID: 1524388260}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: CardsinDeckText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8740,7 +8736,7 @@ GameObject:
   - component: {fileID: 1604921783}
   - component: {fileID: 1604921785}
   - component: {fileID: 1604921784}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: CardBackDesc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11748,7 +11744,7 @@ GameObject:
   - component: {fileID: 2102600067}
   - component: {fileID: 2102600069}
   - component: {fileID: 2102600068}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

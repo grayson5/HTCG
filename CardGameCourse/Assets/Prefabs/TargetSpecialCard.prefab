@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224959687161366954}
   - component: {fileID: 222927328521406690}
   - component: {fileID: 114690752585465100}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: GlowImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 223700775388427152}
   - component: {fileID: 114069489414653098}
   - component: {fileID: 114579228127138746}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224754440785452990}
   - component: {fileID: 222929483945899250}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CardPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 224099634039763440}
   - component: {fileID: 222857138288971730}
   - component: {fileID: 114574827550279430}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CardTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 224721687102390806}
   - component: {fileID: 222398886722867470}
   - component: {fileID: 114440282795566632}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4873135234175922}
   - component: {fileID: 120001256880175994}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LineRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 223077793979854954}
   - component: {fileID: 114237558904176844}
   - component: {fileID: 114672474810906058}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 224217667909963398}
   - component: {fileID: 222213118988634118}
   - component: {fileID: 114747248366402318}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CardPicture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 224163576528113310}
   - component: {fileID: 222843510106590028}
   - component: {fileID: 114375160287274088}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CardTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224186357067804092}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CardFace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 224687267217635058}
   - component: {fileID: 222020891529116064}
   - component: {fileID: 114086057285343378}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CardBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 114812051883955716}
   - component: {fileID: 114399188868605964}
   - component: {fileID: 114537571313778688}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TargetSpecialCard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224267703843689492}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CardBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 224532653990535890}
   - component: {fileID: 222148882904962272}
   - component: {fileID: 114274233491307884}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 222320140745387444}
   - component: {fileID: 114915625602342794}
   - component: {fileID: 114754224272878186}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: PersonaText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4246319760399948}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: facePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,7 +289,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4279953472714840}
   - component: {fileID: 212060037254246898}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 224214753491063962}
   - component: {fileID: 222668456535120486}
   - component: {fileID: 114026315056242944}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CardBackDesc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -322,7 +322,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224133591496590150}
   - component: {fileID: 222270160162180468}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CardPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 222355839837966100}
   - component: {fileID: 114001883223487996}
   - component: {fileID: 114346615467730966}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CardTitleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 224397279534446252}
   - component: {fileID: 222675565569889998}
   - component: {fileID: 114345531797019884}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: AD-Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 224861115484928824}
   - component: {fileID: 222250407310009034}
   - component: {fileID: 114806019644650902}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CardPicture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 222029009839201766}
   - component: {fileID: 114526033287795250}
   - component: {fileID: 114485886304554136}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CardTitleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -409,7 +409,7 @@ GameObject:
   - component: {fileID: 224795895971768964}
   - component: {fileID: 222159814444079930}
   - component: {fileID: 114827096169669026}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: AD-Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 224994555284594784}
   - component: {fileID: 222947113680447472}
   - component: {fileID: 114410237415253394}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CardBackPicture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,7 +441,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224716476374648128}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CardFace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -461,7 +461,7 @@ GameObject:
   - component: {fileID: 114766735854577296}
   - component: {fileID: 114647474819834110}
   - component: {fileID: 114998534994408756}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,7 +479,7 @@ GameObject:
   - component: {fileID: 222347760912460540}
   - component: {fileID: 114877406793949502}
   - component: {fileID: 114434075331451784}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CardDescText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -496,7 +496,7 @@ GameObject:
   - component: {fileID: 224366581730069010}
   - component: {fileID: 222013601475438880}
   - component: {fileID: 114709329548631164}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CardDescription
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -513,7 +513,7 @@ GameObject:
   - component: {fileID: 224478552954541352}
   - component: {fileID: 222451836875853240}
   - component: {fileID: 114651959076146656}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CardBackPicture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -531,7 +531,7 @@ GameObject:
   - component: {fileID: 222371654442326268}
   - component: {fileID: 114403188782599574}
   - component: {fileID: 114404159806055026}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: PersonaText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 224287405887440798}
   - component: {fileID: 222629667431021936}
   - component: {fileID: 114731925299249630}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CardBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -565,7 +565,7 @@ GameObject:
   - component: {fileID: 224972704436092048}
   - component: {fileID: 222265465683701300}
   - component: {fileID: 114714678909838438}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CardBackDesc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -580,7 +580,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 224848797467756764}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CardBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -597,7 +597,7 @@ GameObject:
   - component: {fileID: 224430389289986662}
   - component: {fileID: 222547232967959132}
   - component: {fileID: 114393804417228902}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CardDescription
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,7 +615,7 @@ GameObject:
   - component: {fileID: 222731674387116558}
   - component: {fileID: 114436170199507754}
   - component: {fileID: 114449037411456256}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: CardDescText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,7 +632,7 @@ GameObject:
   - component: {fileID: 224467767765761152}
   - component: {fileID: 222761513524401154}
   - component: {fileID: 114162286856992086}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: GlowImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -647,7 +647,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4572529067707014}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: facePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -663,7 +663,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4539351183505324}
   - component: {fileID: 114239641072232916}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpecialCardPreview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -966,7 +966,6 @@ MonoBehaviour:
   CardFaceFrameImage: {fileID: 114274233491307884}
   CardFaceGlowImage: {fileID: 114162286856992086}
   CardBackGlowImage: {fileID: 0}
-  RarityStoneImage: {fileID: 0}
 --- !u!114 &114274233491307884
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1674,7 +1673,6 @@ MonoBehaviour:
   CardFaceFrameImage: {fileID: 114440282795566632}
   CardFaceGlowImage: {fileID: 114690752585465100}
   CardBackGlowImage: {fileID: 0}
-  RarityStoneImage: {fileID: 0}
 --- !u!114 &114827096169669026
 MonoBehaviour:
   m_ObjectHideFlags: 1

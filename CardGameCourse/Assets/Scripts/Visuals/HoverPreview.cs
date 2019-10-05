@@ -88,9 +88,9 @@ public class HoverPreview: MonoBehaviour
         // 4) disable if we have what to disable
         if (TurnThisOffWhenPreviewing!=null)
             TurnThisOffWhenPreviewing.SetActive(false);
-        canvas = GetComponentInChildren<Canvas>();
-        canvas.sortingLayerName = "AboveEverything";
-        canvas.sortingOrder = 100;
+        //canvas = GetComponentInChildren<Canvas>();
+        //canvas.sortingLayerName = "AboveEverything";
+        //canvas.sortingOrder = 100;
         // 5) tween to target position
         previewGameObject.transform.localPosition = Vector3.zero;
         previewGameObject.transform.localScale = Vector3.one;
