@@ -25,7 +25,7 @@ public class DeckInScrollList : MonoBehaviour, IPointerEnterHandler, IPointerExi
         Debug.Log("in EditThisDeck");
         DeckBuildingScreen.Instance.HideScreen();
         // 1) make sure that it is for the same character and load the same deck name. 
-        DeckBuildingScreen.Instance.BuilderScript.BuildADeckFor(savedDeckInfo.Character);
+        DeckBuildingScreen.Instance.BuilderScript.BuildADeckFor(savedDeckInfo.Character, false);
         DeckBuildingScreen.Instance.BuilderScript.DeckName.text = savedDeckInfo.DeckName;
         // 2) populate it with the same cards that were in this deck.
         foreach (CardAsset asset in savedDeckInfo.Cards)

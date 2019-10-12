@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Upper Left Attack
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
+  PicDir: 3
   Description: If your opponent played a Power Blow last turn, you may make your first
     attack this turn Hidden. You may make a Hard Exertion to make this attack a Power
     Blow.

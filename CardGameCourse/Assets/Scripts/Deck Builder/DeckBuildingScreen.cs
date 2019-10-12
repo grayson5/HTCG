@@ -52,12 +52,12 @@ public class DeckBuildingScreen : MonoBehaviour {
         // TODO: update the tab to say the name of the character class that we are building a deck for, update the script on the tab.
     }
 
-    public void BuildADeckFor(CharacterAsset asset)
+    public void BuildADeckFor(CharacterAsset asset, bool newdeck)
     {
         ShowScreenForDeckBuilding();
         CollectionBrowserScript.ShowCollectionForDeckBuilding(asset);
         DeckBuildingScreen.Instance.TabsScript.SetClassOnClassTab(asset);
-        BuilderScript.BuildADeckFor(asset);
+        BuilderScript.BuildADeckFor(asset, newdeck);
     }
 
     public void HideScreen()

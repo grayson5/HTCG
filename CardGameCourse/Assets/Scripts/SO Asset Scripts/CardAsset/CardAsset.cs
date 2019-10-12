@@ -17,12 +17,14 @@ public enum AttackTypes { Regular, Additional, Modified, Special, Headshot, Dodg
 public enum SpecialType { Event, Object, Plot, Situation, Location, Edge}
 public enum RarityOptions{  Basic, Common, Uncommon, Rare, Epic }
 public enum TypesOfCards{ Creature, Spell }
+public enum PicDirectory { Duncan, Slan, Kalas, TV1}
 
 public class CardAsset : ScriptableObject 
 {
     // this object will hold the info about the most general card
     [Header("General info")]
     public CharacterAsset characterAsset;  // if this is null, it`s a neutral card
+    public PicDirectory PicDir;
     [TextArea(2,3)]
     public string Description;  // Description for spell or character
     [TextArea(2, 3)]

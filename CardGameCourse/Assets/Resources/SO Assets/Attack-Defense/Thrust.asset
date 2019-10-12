@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Thrust
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
+  PicDir: 3
   Description: If this attack is successful it does an additional point of damage.
   Tags: 
   Rarity: 0

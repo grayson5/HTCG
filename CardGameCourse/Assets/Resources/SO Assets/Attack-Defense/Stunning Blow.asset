@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Stunning Blow
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
+  PicDir: 3
   Description: 'ATTACK: Make an exertion to play this attack. This attack does not
     do  damage. If your opponent does not successfully defend this attack, he must
     discard his entire hand before his attack phase.'

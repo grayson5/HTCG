@@ -20,6 +20,7 @@ public class AddCardToDeck : MonoBehaviour {
 
     void OnMouseDown()
     {
+        Debug.Log("In MouseDown");
         CardAsset asset = GetComponent<OneCardManager>().cardAsset;
         if (asset == null)
             return;
@@ -27,12 +28,15 @@ public class AddCardToDeck : MonoBehaviour {
         // check that these cards are available in collection (Quantity>0) or (TotalQuantity-AmountAlreadyInDeck)>0
         if (CardCollection.Instance.QuantityOfEachCard[cardAsset] - DeckBuildingScreen.Instance.BuilderScript.NumberOfThisCardInDeck(cardAsset) > 0)
         {
+            Debug.Log("Now adding to deck");
             DeckBuildingScreen.Instance.BuilderScript.AddCard(asset);
             UpdateQuantity();
         }
         else
         {
+            Debug.Log("Calc wrong");
             // say that you do not have enough cards
+
         }
     }
 

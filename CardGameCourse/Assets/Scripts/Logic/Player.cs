@@ -476,6 +476,7 @@ public class Player : MonoBehaviour, ICharacter
         //Check to see if Attack Phase and if so, get last defense played
         if (currentphase == "Attack")
         {
+            Debug.Log("Attack Left: " + AttacksLeftThisTurn);
             for (int i = table.CreaturesOnTable.Count; i > 0; i--)
             {
                 //Debug.Log("Checking Defenses in Play: " + table.CreaturesOnTable[i].ca.name);
@@ -637,8 +638,8 @@ public class Player : MonoBehaviour, ICharacter
                         case "Attack":
                             //if (attacksplayed < AttacksLeftThisTurn)
                             //{
-                            Debug.Log("Highlight Attack Phase: " + cl.ca.name);
-                            //Debug.Log("attacksplayed: " + attacksplayed + " - AttacksLeft: " + AttacksLeftThisTurn);
+                            //Debug.Log("Highlight Attack Phase: " + cl.ca.name);
+                            Debug.Log("attacksplayed: " + attacksplayed + " - AttacksLeft: " + AttacksLeftThisTurn);
                             //Debug.Log("Can Attack? " + CanAttackThisTurn);
 
                             if(CanAttackThisTurn == false && cl.ca.AttackDefense == "A")
@@ -671,7 +672,7 @@ public class Player : MonoBehaviour, ICharacter
                                     //break;
                                 }
                             }
-                                if (cl.ca.AttackDefense == "A" && attacksplayed < AttacksLeftThisTurn)
+                                if (cl.ca.AttackDefense == "A" && attacksplayed <= AttacksLeftThisTurn && AttacksLeftThisTurn > 0)
                                 {
                                 //Now check to see if attack is to area just blocked
                                     //Debug.Log("Checking Attack Card");

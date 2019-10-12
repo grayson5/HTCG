@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DeckBuilder : MonoBehaviour 
 {
-    public GameObject CardNamePrefab;
+    public GameObject CardNamePrefab1;
     public Transform Content;
     public InputField DeckName;
 
@@ -27,13 +27,19 @@ public class DeckBuilder : MonoBehaviour
 
     public void AddCard(CardAsset asset)
     {
+        Debug.Log("In AddCard");
         // if we are browsing the collection
         if (!InDeckBuildingMode)
             return;
 
         // if the deck is already full 
         if (deckList.Count == AmountOfCardsInDeck)
+        {
+            Debug.Log("Deck Full");
+            Debug.Log("Deck Count: " + deckList.Count);
+            Debug.Log("AmtCardinDeck: " + AmountOfCardsInDeck);
             return;
+        }
 
         int count = NumberOfThisCardInDeck(asset);
 
@@ -45,6 +51,7 @@ public class DeckBuilder : MonoBehaviour
 
         if (count < limitOfThisCardInDeck)
         {
+            Debug.Log("Now in If");
             deckList.Add(asset);
 
             CheckDeckCompleteFrame();
@@ -61,7 +68,7 @@ public class DeckBuilder : MonoBehaviour
             else
             {
                 // 1) Add card`s name to the list
-                GameObject cardName = Instantiate(CardNamePrefab, Content) as GameObject;
+                GameObject cardName = Instantiate(CardNamePrefab1, Content) as GameObject;
                 cardName.transform.SetAsLastSibling();
                 cardName.transform.localScale = Vector3.one;
                 CardNameRibbon ribbon = cardName.GetComponent<CardNameRibbon>();
@@ -108,7 +115,7 @@ public class DeckBuilder : MonoBehaviour
         DeckBuildingScreen.Instance.CollectionBrowserScript.UpdateQuantitiesOnPage();
     }
 
-    public void BuildADeckFor(CharacterAsset asset)
+    public void BuildADeckFor(CharacterAsset asset, bool newdeck)
     {
         InDeckBuildingMode = true;
         buildingForCharacter = asset;
@@ -129,7 +136,10 @@ public class DeckBuilder : MonoBehaviour
 
         // reset the InputField text to be empty
         DeckName.text = "";
-        AddBasicCardsToDeck();
+        if (newdeck == true)
+        {
+            AddBasicCardsToDeck();
+        }
 
     }
 
@@ -156,6 +166,7 @@ public class DeckBuilder : MonoBehaviour
     private void AddBasicCardsToDeck()
     {
         CardAsset ca;
+        Debug.Log("Adding Basic Cards to Deck");
 
         //Add 9 basic Required Attacks
         ca = CardCollection.Instance.GetCardAssetByName("Upper Left Attack");

@@ -61,7 +61,7 @@ public class HoverPreview: MonoBehaviour
 
     void OnMouseEnter()
     {
-        Debug.Log("In OnMouseEnter");
+        //Debug.Log("In OnMouseEnter");
         OverCollider = true;
         if (PreviewsAllowed && ThisPreviewEnabled)
             PreviewThisObject();

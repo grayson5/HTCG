@@ -15,6 +15,7 @@ TagManager:
   - LowDiscard
   - TopDiscard
   - Dice1
+  - Keep
   layers:
   - Default
   - TransparentFX

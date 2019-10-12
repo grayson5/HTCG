@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: RightGuard
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
+  PicDir: 3
   Description: You may make a Hard Exertion to make this block a Power Block
   Tags: 
   Rarity: 1
@@ -25,18 +26,19 @@ MonoBehaviour:
   MaxHealth: 1
   Attack: 0
   AttacksForOneTurn: 1
-  Charge: 0
+  Targets: 0
   CreatureScriptName: 
   specialCreatureAmount: 0
-  SpellScriptName: 
+  SpecialScriptName: 
+  SecondSpecialName: 
   ConditionCheckName: 
   RemoveEffectName: 
   DefenseEffectName: 
-  specialSpellAmount: 0
-  Targets: 0
   PlotName: 
   ObjectName: 
   SpecialData: 
+  specialSpellAmount: 0
+  secondSpecialAmount: 0
   AttackDefense: G
   ModifiedDamageAmt: 0
   AdditionalDamageAmt: 0

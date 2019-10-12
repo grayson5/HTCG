@@ -23,6 +23,7 @@ public class PlayerArea : MonoBehaviour
     public Button ShieldIcon;
     public Button PAbilityIcon;
     public Button DisarmIcon;
+    public GameObject DiscardPanel;
 
     public bool AllowedToControlThisPlayer
     {

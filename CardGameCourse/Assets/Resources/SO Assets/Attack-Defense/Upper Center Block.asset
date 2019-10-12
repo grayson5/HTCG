@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Upper Center Block
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
+  PicDir: 3
   Description: You may make a Hard Exertion to make this block a Power Block
   Tags: 
   Rarity: 0

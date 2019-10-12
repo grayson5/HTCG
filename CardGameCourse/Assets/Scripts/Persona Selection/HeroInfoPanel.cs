@@ -72,7 +72,7 @@ public class HeroInfoPanel : MonoBehaviour {
         if (selectedPortrait == null)
             return;
 
-        DeckBuildingScreen.Instance.BuildADeckFor(selectedPortrait.asset);
+        DeckBuildingScreen.Instance.BuildADeckFor(selectedPortrait.asset, true);
     }
         
 }

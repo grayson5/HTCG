@@ -5990,8 +5990,8 @@ MonoBehaviour:
     type: 2}
   Content: {fileID: 826554611}
   DeckName: {fileID: 1064854416}
-  SameCardLimit: 2
-  AmountOfCardsInDeck: 20
+  SameCardLimit: 6
+  AmountOfCardsInDeck: 50
   DeckCompleteFrame: {fileID: 53068492}
 --- !u!114 &477091041
 MonoBehaviour:

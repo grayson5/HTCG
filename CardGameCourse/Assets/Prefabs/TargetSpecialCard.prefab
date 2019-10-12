@@ -214,7 +214,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1290555422845406
 GameObject:
   m_ObjectHideFlags: 1
@@ -1615,7 +1615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TurnThisOffWhenPreviewing: {fileID: 1057170733033460}
-  TargetPosition: {x: 0, y: 2.5, z: 0}
+  TargetPosition: {x: 0, y: 2.5, z: -0.5}
   TargetScale: 3.2
   previewGameObject: {fileID: 1997306238450540}
   ActivateInAwake: 1
