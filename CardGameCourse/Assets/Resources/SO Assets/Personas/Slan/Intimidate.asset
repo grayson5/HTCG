@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Intimidate
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 11400000, guid: 45f74ad5115ab224f8cde19821a8a162, type: 2}
+  PicDir: 1
   Description: 'EVENT: Your opponent cannot attack next turn.'
   Tags: 
   Rarity: 3

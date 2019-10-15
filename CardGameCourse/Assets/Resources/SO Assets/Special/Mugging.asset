@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Mugging
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
+  PicDir: 3
   Description: 'EVENT: Arrange for target to be mugged. There is a two in six chance
     of success. If successful, target takes 2 damage.'
   Tags: 

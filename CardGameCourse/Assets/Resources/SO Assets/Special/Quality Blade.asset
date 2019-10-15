@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Quality Blade
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
+  PicDir: 3
   Description: 'OBJECT: Add 1 to your Ability while Quality Blade is in play.  Each
     player may only have 1 Quality Blade in play.'
   Tags: 

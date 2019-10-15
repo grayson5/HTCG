@@ -20,6 +20,7 @@ public class Player : MonoBehaviour, ICharacter
     // a flag not to use hero power twice
     public bool usedHeroPowerThisTurn = false;
     public bool AttackAreasBlocked = false;
+    public int NumCardsforExertion = 5;
     public int TempAddAbility;
     public int NormalAttack;
     public int PowerAttack;
@@ -37,6 +38,8 @@ public class Player : MonoBehaviour, ICharacter
     public bool CanAttackThisTurn = true;
     public bool CanPlaySpecials;
     public bool CanPlayDodges = true;
+    public bool CanPlayDefenses = true;
+    public bool CanPlayBlocks = true;
     public bool Disarmed = false;
     public bool Dicerolled = false;
     //public bool TurnCounterOn = false;
@@ -235,6 +238,9 @@ public class Player : MonoBehaviour, ICharacter
 
         //Reset attributes that opponent can effect through cards
         CanAttackThisTurn = true;
+        CanPlayDefenses = true;
+        CanPlayBlocks = true;
+        
 
         if (BothPlayersCantAttackCounter > 0)
         {
@@ -267,6 +273,8 @@ public class Player : MonoBehaviour, ICharacter
                 otherPlayer.CanPlayDodges = true;
             }
         }
+        else
+            CanPlayDodges = true;
 
     }
 
@@ -399,6 +407,17 @@ public class Player : MonoBehaviour, ICharacter
             case "D":
                 defensesplayed++;
                 //playedCard.ca.PowerAorB = false;
+
+                //Now activate the Defense effect if there is one
+                if (playedCard.ca.DefenseEffectName != null &&
+                    playedCard.ca.DefenseEffectName.Length > 0)
+                {
+                    Debug.Log("DefenseEffectName: " + playedCard.ca.DefenseEffectName);
+                    //ActivateDefenseEffect(table.CreaturesOnTable[y].UniqueCreatureID, table.CreaturesOnTable[y].ca);
+                    playedCard.ca.defenseeffect.ActivateEffect
+                        (playedCard.ca.specialSpellAmount, null, this, this.otherPlayer, playedCard.ca.SpecialData);
+                }
+
                 break;
             case "A":
                 attacksplayed++;
@@ -556,6 +575,15 @@ public class Player : MonoBehaviour, ICharacter
                             {
                                 g.GetComponent<OneCardManager>().CanBePlayedNow = false;
                             }
+                            else if (CanPlayDefenses == false && (cl.ca.AttackDefense == "D" || cl.ca.AttackDefense == "G"))
+                            {
+                                g.GetComponent<OneCardManager>().CanBePlayedNow = false;
+                            }
+                            else if (CanPlayBlocks == false && (cl.ca.AttackDefense == "D" || cl.ca.AttackDefense == "G") && 
+                                     cl.ca.TypeOfAttack == AttackTypes.Regular)
+                            {
+                                g.GetComponent<OneCardManager>().CanBePlayedNow = false;
+                            }
                             else if (cl.ca.AttackDefense == "D" || cl.ca.AttackDefense == "G")
                             {
                                 if ((otherPlayer.attacksplayed > 0) && (otherPlayer.attacksplayed > defensesplayed) && (GuardInPlay == false))
@@ -639,7 +667,8 @@ public class Player : MonoBehaviour, ICharacter
                             //if (attacksplayed < AttacksLeftThisTurn)
                             //{
                             //Debug.Log("Highlight Attack Phase: " + cl.ca.name);
-                            Debug.Log("attacksplayed: " + attacksplayed + " - AttacksLeft: " + AttacksLeftThisTurn);
+
+                            //Debug.Log("attacksplayed: " + attacksplayed + " - AttacksLeft: " + AttacksLeftThisTurn);
                             //Debug.Log("Can Attack? " + CanAttackThisTurn);
 
                             if(CanAttackThisTurn == false && cl.ca.AttackDefense == "A")
@@ -776,15 +805,8 @@ public class Player : MonoBehaviour, ICharacter
             }
         }
 
-        Debug.Log("Done with HighlightPlayableCards");
-        //foreach (CreatureLogic crl in table.CreaturesOnTable)
-        //{
-        //    GameObject g = IDHolder.GetGameObjectWithID(crl.UniqueCreatureID);
-        //    if (g != null)
-        //        g.GetComponent<OneCreatureManager>().CanAttackNow = (crl.AttacksLeftThisTurn > 0) && !removeAllHighlights;
-        //}
-        // highlight hero power
-        //PArea.HeroPower.Highlighted = (!usedHeroPowerThisTurn) && (ManaLeft > 1) && !removeAllHighlights;
+        //Debug.Log("Done with HighlightPlayableCards");
+
     }
 
     public bool BlockCanBePlayed(string[] attackvalues, string[] defensevalues)
@@ -834,6 +856,7 @@ public class Player : MonoBehaviour, ICharacter
         AttackAreasBlocked = charAsset.AttackAreasBlocked;
         NormalAttack = charAsset.NormalAttack;
         PowerAttack = charAsset.PowerAttack;
+        NumCardsforExertion = charAsset.NumCardsForExertion;
         CanPlaySpecials = true;
 
         if (charAsset.HeroPowerName != null && charAsset.HeroPowerName != "")
@@ -1054,7 +1077,10 @@ public class Player : MonoBehaviour, ICharacter
         blocktype blockedit;
 
         int numofblocks = GetNumberOfBlocks();
+        int numofdodges = GetNumberOfDodges();
+
         Debug.Log("Numofblocks: " + numofblocks);
+        Debug.Log("Numofdodges: " + numofdodges);
         int numofattacks = 0;
 
         CreatureLogic[] HiddenAttacks = TurnManager.Instance.whoseTurn.otherPlayer.table.CreaturesOnTable.ToArray();
@@ -1107,7 +1133,7 @@ public class Player : MonoBehaviour, ICharacter
                     bool powerblow = otherPlayer.table.CreaturesOnTable[i].PowerAOrB;
 
                     //First check to see if defending player has played a block.
-                    if (numofblocks > 0)
+                    if ((numofblocks > 0 && CanPlayBlocks == true) || (numofdodges > 0 && CanPlayDodges == true))
                     {
                         Debug.Log("Blocks played - check'em");
                         //Now loop through blocks to see if any block the attack
@@ -1126,16 +1152,16 @@ public class Player : MonoBehaviour, ICharacter
                                 string[] defensevalues = defensegrid.Split(',');
                                 bool powerblock = table.CreaturesOnTable[y].PowerAOrB;
 
-                                if (table.CreaturesOnTable[y].ca.DefenseEffectName != null &&
-                                    table.CreaturesOnTable[y].ca.DefenseEffectName.Length > 0 &&
-                                    table.CreaturesOnTable[y].ActivatedDefEffect == false)
-                                {
-                                    Debug.Log("DefenseEffectName: " + table.CreaturesOnTable[y].ca.DefenseEffectName);
-                                    //ActivateDefenseEffect(table.CreaturesOnTable[y].UniqueCreatureID, table.CreaturesOnTable[y].ca);
-                                    table.CreaturesOnTable[y].ca.defenseeffect.ActivateEffect
-                                        (table.CreaturesOnTable[y].ca.specialSpellAmount, null, this, this.otherPlayer, table.CreaturesOnTable[y].ca.SpecialData);
-                                    table.CreaturesOnTable[y].ActivatedDefEffect = true;
-                                }
+                                //if (table.CreaturesOnTable[y].ca.DefenseEffectName != null &&
+                                //    table.CreaturesOnTable[y].ca.DefenseEffectName.Length > 0 &&
+                                //    table.CreaturesOnTable[y].ActivatedDefEffect == false)
+                                //{
+                                //    Debug.Log("DefenseEffectName: " + table.CreaturesOnTable[y].ca.DefenseEffectName);
+                                //    //ActivateDefenseEffect(table.CreaturesOnTable[y].UniqueCreatureID, table.CreaturesOnTable[y].ca);
+                                //    table.CreaturesOnTable[y].ca.defenseeffect.ActivateEffect
+                                //        (table.CreaturesOnTable[y].ca.specialSpellAmount, null, this, this.otherPlayer, table.CreaturesOnTable[y].ca.SpecialData);
+                                //    table.CreaturesOnTable[y].ActivatedDefEffect = true;
+                                //}
                                 //ActivateDefenseEffect(table.CreaturesOnTable[y].UniqueCreatureID, table.CreaturesOnTable[y].ca);
 
                                 for (int x = 0; x < 9; x++)
@@ -1239,7 +1265,7 @@ public class Player : MonoBehaviour, ICharacter
                     else
                     {
                         //No cards on table so attack is succesful by default
-                        Debug.Log("Attack Succeeded - No Blocks Played");
+                        Debug.Log("Attack Succeeded - No Blocks Played Or Ignore Standing Defenses");
                         Debug.Log("Player: " + name + " takes " + GetDamageValue(otherPlayer.table.CreaturesOnTable[i].ca,
                                                             otherPlayer.table.CreaturesOnTable[i].PowerAOrB, blockedit) + " Damage");
 
@@ -1291,10 +1317,25 @@ public class Player : MonoBehaviour, ICharacter
 
         for (int i = 0; i < table.CreaturesOnTable.Count; i++)
         {
-            if (table.CreaturesOnTable[i].ca.AttackDefense == "D" || table.CreaturesOnTable[i].ca.AttackDefense == "G")
+            if ((table.CreaturesOnTable[i].ca.AttackDefense == "D" || table.CreaturesOnTable[i].ca.AttackDefense == "G") &&
+                (table.CreaturesOnTable[i].ca.TypeOfAttack == AttackTypes.Regular))
                 numofblocks++;
         }
         return numofblocks;
+    }
+
+    public int GetNumberOfDodges()
+    {
+        int numofdodges = 0;
+
+        for (int i = 0; i < table.CreaturesOnTable.Count; i++)
+        {
+            Debug.Log(table.CreaturesOnTable[i].ca.AttackDefense + " - " + table.CreaturesOnTable[i].ca.TypeOfAttack);
+
+            if (table.CreaturesOnTable[i].ca.AttackDefense == "D" && table.CreaturesOnTable[i].ca.TypeOfAttack == AttackTypes.Dodge)
+                numofdodges++;
+        }
+        return numofdodges;
     }
 
     public int GetDamageValue(CardAsset attackcard, bool PowerBlow, blocktype block)
@@ -1313,6 +1354,10 @@ public class Player : MonoBehaviour, ICharacter
                 }
                 else
                     damagevalue += otherPlayer.NormalAttack;
+                break;
+
+            case AttackTypes.Special:
+                damagevalue += attackcard.ModifiedDamageAmt;
                 break;
 
             case AttackTypes.Additional:
@@ -1408,7 +1453,7 @@ public class Player : MonoBehaviour, ICharacter
                 if (targetgridid >= 0)
                 {
                     Debug.Log("going to for loop for PowerBlow");
-                    for (int x = 0; x < 3; x++)
+                    for (int x = 0; x < NumCardsforExertion; x++)
                         ExertACard(false);
                     GameObject target = IDHolder.GetGameObjectWithID(table.CreaturesOnTable[targetgridid].ID);
                     table.CreaturesOnTable[targetgridid].PowerAOrB = true;
@@ -1440,7 +1485,7 @@ public class Player : MonoBehaviour, ICharacter
                     if (targetgridid >= 0)
                     {
                         Debug.Log("going to for loop for PowerBlock");
-                        for (int x = 0; x < 3; x++)
+                        for (int x = 0; x < NumCardsforExertion; x++)
                             ExertACard(false);
                         GameObject target = IDHolder.GetGameObjectWithID(table.CreaturesOnTable[targetgridid].ID);
                         table.CreaturesOnTable[targetgridid].PowerAOrB = true;

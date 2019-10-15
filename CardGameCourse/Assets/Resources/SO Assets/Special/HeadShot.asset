@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: HeadShot
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
+  PicDir: 3
   Description: 'EVENT: You may only play this card in conjunction with an Upper Attack.
     That Attack is a Head Shot.'
   Tags: 

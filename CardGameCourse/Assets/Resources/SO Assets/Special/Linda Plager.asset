@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Linda Plager
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
+  PicDir: 3
   Description: 'EVENT: Duel is Delayed. All players discard 2 attacks.'
   Tags: 
   Rarity: 3

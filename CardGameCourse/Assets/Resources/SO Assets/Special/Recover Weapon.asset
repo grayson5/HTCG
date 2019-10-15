@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Recover Weapon
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
+  PicDir: 3
   Description: 'EVENT: You may only play this card if your are Disarmed but your weapon
     is not broken. Your weapon is rearmed.'
   Tags: 

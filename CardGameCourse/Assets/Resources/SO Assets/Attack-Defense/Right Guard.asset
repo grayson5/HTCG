@@ -9,26 +9,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41e206fc57f453a42b932de9e94caabf, type: 3}
-  m_Name: StreetPunk
+  m_Name: Right Guard
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
-  Description: 'EVENT: Target Takes 1 Damage'
+  PicDir: 3
+  Description: You may make a Hard Exertion to make this block a Power Block
   Tags: 
-  Rarity: 2
-  CardImage: {fileID: 21300000, guid: 524c472c1b93f8741bdbf92badefec64, type: 3}
+  Rarity: 1
+  CardImage: {fileID: 21300000, guid: 289fa8a37b0ecc740b07e83d0e95e1b6, type: 3}
   ManaCost: 0
   TokenCard: 0
   OverrideLimitOfThisCardInDeck: -1
-  TypeOfCard: 1
-  GridImage: {fileID: 21300000, guid: 3b7f780f47e132447a7c6b458893b6cb, type: 3}
-  GridData: 
-  MaxHealth: 0
+  TypeOfCard: 0
+  GridImage: {fileID: 21300000, guid: 8e4404c11432a74419b46c53c246de73, type: 3}
+  GridData: 0,-1,-1,0,-1,-1,0,-1,-1
+  MaxHealth: 1
   Attack: 0
   AttacksForOneTurn: 1
   Targets: 0
   CreatureScriptName: 
-  specialCreatureAmount: 1
-  SpecialScriptName: DealEventDamageToTarget
+  specialCreatureAmount: 0
+  SpecialScriptName: 
   SecondSpecialName: 
   ConditionCheckName: 
   RemoveEffectName: 
@@ -36,9 +37,9 @@ MonoBehaviour:
   PlotName: 
   ObjectName: 
   SpecialData: 
-  specialSpellAmount: 1
+  specialSpellAmount: 0
   secondSpecialAmount: 0
-  AttackDefense: S
+  AttackDefense: G
   ModifiedDamageAmt: 0
   AdditionalDamageAmt: 0
   TypeOfAttack: 0
@@ -47,5 +48,5 @@ MonoBehaviour:
   TypeOfSpecial: 0
   SweepAttack: 0
   SweepDefense: 0
-  SweepSpecial: 1
+  SweepSpecial: 0
   HasConditionCheck: 0

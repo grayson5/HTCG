@@ -16,7 +16,7 @@ MonoBehaviour:
   Description: You may make a Hard Exertion to make this block a Power Block
   Tags: 
   Rarity: 0
-  CardImage: {fileID: 21300000, guid: 70625ded7b773a5429ae23c12028aca2, type: 3}
+  CardImage: {fileID: 21300000, guid: 2e10a784a8e259244a6dacd318d4bef4, type: 3}
   ManaCost: 0
   TokenCard: 0
   OverrideLimitOfThisCardInDeck: -1

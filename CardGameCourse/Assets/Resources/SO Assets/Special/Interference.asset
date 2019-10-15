@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Interference
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
+  PicDir: 3
   Description: 'EVENT: Target must discard 2 cards.'
   Tags: 
   Rarity: 1

@@ -16,7 +16,7 @@ MonoBehaviour:
   Description: If this attack is successful it does an additional point of damage.
   Tags: 
   Rarity: 0
-  CardImage: {fileID: 21300000, guid: b193f06d2d51ec54fbbae19a3894d855, type: 3}
+  CardImage: {fileID: 21300000, guid: a2d4fbd297eceaa42873b727c519bd2d, type: 3}
   ManaCost: 0
   TokenCard: 0
   OverrideLimitOfThisCardInDeck: -1

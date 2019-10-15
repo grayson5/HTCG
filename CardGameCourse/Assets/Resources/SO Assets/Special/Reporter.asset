@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Reporter
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
+  PicDir: 3
   Description: 'EVENT: Duel is Delayed. Each player gains 2 Ability. Max not exceed
     maximum.'
   Tags: 

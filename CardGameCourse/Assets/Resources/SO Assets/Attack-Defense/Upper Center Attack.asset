@@ -18,7 +18,7 @@ MonoBehaviour:
     Blow.
   Tags: 
   Rarity: 0
-  CardImage: {fileID: 21300000, guid: 67f51fdadd561ec46b076a8a043d4b9a, type: 3}
+  CardImage: {fileID: 21300000, guid: a30793da1545616478d3ef8952c9f94d, type: 3}
   ManaCost: 0
   TokenCard: 0
   OverrideLimitOfThisCardInDeck: -1

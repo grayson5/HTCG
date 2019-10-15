@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Darkness - Lights Out
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
+  PicDir: 3
   Description: "EVENT: Plot - Lights Out:\_You may not play this card unless you have
     The Bait and The Trap in play. Discard all 3 cards. Your next 5 attacks are Hidden."
   Tags: 
@@ -26,20 +27,19 @@ MonoBehaviour:
   MaxHealth: 0
   Attack: 0
   AttacksForOneTurn: 1
-  Charge: 0
+  Targets: 0
   CreatureScriptName: 
   specialCreatureAmount: 1
-  SpellScriptName: 
+  SpecialScriptName: 
   SecondSpecialName: 
   ConditionCheckName: CheckForSpecificPlots
   RemoveEffectName: 
   DefenseEffectName: 
-  specialSpellAmount: 5
-  secondSpecialAmount: 0
-  Targets: 0
   PlotName: PlotEvent
   ObjectName: 
   SpecialData: The Bait,The Trap
+  specialSpellAmount: 5
+  secondSpecialAmount: 0
   AttackDefense: S
   ModifiedDamageAmt: 0
   AdditionalDamageAmt: 0

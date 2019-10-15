@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Back Away
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 11400000, guid: 45f74ad5115ab224f8cde19821a8a162, type: 2}
+  PicDir: 1
   Description: 'DODGE: This Defense will not avoid Ranged Attacks. You may only make
     Ranged Attacks this turn.'
   Tags: 
@@ -26,18 +27,19 @@ MonoBehaviour:
   MaxHealth: 1
   Attack: 0
   AttacksForOneTurn: 1
-  Charge: 0
+  Targets: 0
   CreatureScriptName: 
   specialCreatureAmount: 0
-  SpellScriptName: 
+  SpecialScriptName: 
+  SecondSpecialName: 
   ConditionCheckName: 
   RemoveEffectName: 
   DefenseEffectName: PlayOnlyRangedAttacks
-  specialSpellAmount: 1
-  Targets: 0
   PlotName: 
   ObjectName: 
   SpecialData: 
+  specialSpellAmount: 1
+  secondSpecialAmount: 0
   AttackDefense: D
   ModifiedDamageAmt: 0
   AdditionalDamageAmt: 0

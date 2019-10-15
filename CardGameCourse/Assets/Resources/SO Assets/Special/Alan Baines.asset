@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Alan Baines
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
+  PicDir: 3
   Description: 'EVENT: Opponent must discard all plot cards out of his hand.'
   Tags: 
   Rarity: 3

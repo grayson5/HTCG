@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Inquest
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
+  PicDir: 3
   Description: 'EVENT: The justices demand a fair fight. Both players must discard
     all special cards from their hands.'
   Tags: 

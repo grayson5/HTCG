@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: AngryMob
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
+  PicDir: 3
   Description: 'EVENT: Duel is delayed.  Each player takes 3 damage.'
   Tags: 
   Rarity: 1

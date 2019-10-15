@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Unholy Alliance - Ambush
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
+  PicDir: 3
   Description: 'EVENT: Plot - Ambush: You may not play this card unless you have Alliance
     and Discovery in play. Discard all 3 cards. Your opponent loses 4 ability.'
   Tags: 

@@ -9,27 +9,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41e206fc57f453a42b932de9e94caabf, type: 3}
-  m_Name: RightGuard
+  m_Name: Inspiration
   m_EditorClassIdentifier: 
-  characterAsset: {fileID: 0}
-  PicDir: 3
-  Description: You may make a Hard Exertion to make this block a Power Block
+  characterAsset: {fileID: 11400000, guid: 38b29af149eb525439684c0b9ae4f5ad, type: 2}
+  Description: 'EVENT: You may make an extra Exertion this turn.'
   Tags: 
-  Rarity: 1
-  CardImage: {fileID: 21300000, guid: 289fa8a37b0ecc740b07e83d0e95e1b6, type: 3}
+  Rarity: 3
+  CardImage: {fileID: 21300000, guid: 8a282783e1708b342a3396d4074675f0, type: 3}
   ManaCost: 0
   TokenCard: 0
   OverrideLimitOfThisCardInDeck: -1
-  TypeOfCard: 0
-  GridImage: {fileID: 21300000, guid: 8e4404c11432a74419b46c53c246de73, type: 3}
-  GridData: 0,-1,-1,0,-1,-1,0,-1,-1
-  MaxHealth: 1
+  TypeOfCard: 1
+  GridImage: {fileID: 21300000, guid: 3b7f780f47e132447a7c6b458893b6cb, type: 3}
+  GridData: 
+  MaxHealth: 0
   Attack: 0
   AttacksForOneTurn: 1
   Targets: 0
   CreatureScriptName: 
   specialCreatureAmount: 0
-  SpecialScriptName: 
+  SpecialScriptName: AddExertion
   SecondSpecialName: 
   ConditionCheckName: 
   RemoveEffectName: 
@@ -37,9 +36,9 @@ MonoBehaviour:
   PlotName: 
   ObjectName: 
   SpecialData: 
-  specialSpellAmount: 0
+  specialSpellAmount: 1
   secondSpecialAmount: 0
-  AttackDefense: G
+  AttackDefense: S
   ModifiedDamageAmt: 0
   AdditionalDamageAmt: 0
   TypeOfAttack: 0
@@ -48,5 +47,5 @@ MonoBehaviour:
   TypeOfSpecial: 0
   SweepAttack: 0
   SweepDefense: 0
-  SweepSpecial: 0
+  SweepSpecial: 1
   HasConditionCheck: 0

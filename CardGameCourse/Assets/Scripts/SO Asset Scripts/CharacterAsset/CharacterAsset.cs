@@ -14,6 +14,7 @@ public class CharacterAsset : ScriptableObject
     public bool GuardInPlay;
     public int NormalAttack;
     public int PowerAttack;
+    public int NumCardsForExertion;
 	public string HeroPowerName;
     public string PersonaAblConditionChk;
     public string PersonaAbility;

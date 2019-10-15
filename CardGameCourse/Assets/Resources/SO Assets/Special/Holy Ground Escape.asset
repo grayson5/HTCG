@@ -9,9 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41e206fc57f453a42b932de9e94caabf, type: 3}
-  m_Name: HolyGroundEscape
+  m_Name: Holy Ground Escape
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
+  PicDir: 3
   Description: 'EVENT: You leave the battle and escape to Holy Ground. You lose the
     duel but do not lose your head.'
   Tags: 

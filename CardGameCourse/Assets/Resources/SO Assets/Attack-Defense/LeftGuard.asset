@@ -42,7 +42,7 @@ MonoBehaviour:
   AttackDefense: G
   ModifiedDamageAmt: 0
   AdditionalDamageAmt: 0
-  TypeOfAttack: 1
+  TypeOfAttack: 0
   CanBePowerBlow: 0
   SpecialAction: 0
   TypeOfSpecial: 0

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Heroic Deed
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
+  PicDir: 3
   Description: 'EVENT: Discard 1 attack card in order to draw 4 cards.'
   Tags: 
   Rarity: 1

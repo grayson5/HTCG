@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Misfortune
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
+  PicDir: 3
   Description: 'EVENT: Use this card to remove any Object card from play.'
   Tags: 
   Rarity: 1

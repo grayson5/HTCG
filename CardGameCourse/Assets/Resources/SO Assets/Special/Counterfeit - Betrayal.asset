@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Counterfeit - Betrayal
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
+  PicDir: 3
   Description: "EVENT: Plot - Betrayal :\_You may not play this card unless you have
     Abduction and Plastic Surgery in play. Discard all 3 cards. Your opponent must
     draw and discard 10 cards from his Endurance."

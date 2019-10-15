@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Caught In The Act
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
+  PicDir: 3
   Description: 'EVENT: Target discards 3 attacks.'
   Tags: 
   Rarity: 2

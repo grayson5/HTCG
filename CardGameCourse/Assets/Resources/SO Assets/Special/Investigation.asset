@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Investigation
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
+  PicDir: 3
   Description: 'EVENT: Remove 1 Plot Situation from play'
   Tags: 
   Rarity: 1

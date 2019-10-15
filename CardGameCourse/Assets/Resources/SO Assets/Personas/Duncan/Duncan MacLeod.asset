@@ -20,6 +20,7 @@ MonoBehaviour:
   GuardInPlay: 0
   NormalAttack: 2
   PowerAttack: 4
+  NumCardsForExertion: 5
   HeroPowerName: 
   PersonaAblConditionChk: 
   PersonaAbility: 

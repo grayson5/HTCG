@@ -130,6 +130,23 @@ public class TableVisual : MonoBehaviour
         {
             creature.GetComponent<OneCreatureManager>().AttackText.enabled = false;
         }
+
+        if (ca.AttackDefense == "A")
+        {
+            Debug.Log("In 'A'");
+
+            if (ca.TypeOfAttack == AttackTypes.Special)
+                creature.GetComponent<OneCreatureManager>().AttackText.text = ca.ModifiedDamageAmt.ToString();
+
+            if (ca.TypeOfAttack == AttackTypes.Additional)
+            {
+                Debug.Log("Modifying Attack value for Modified");
+                Debug.Log("Additional: " + ca.AdditionalDamageAmt);
+
+                creature.GetComponent<OneCreatureManager>().AttackText.text = (ca.AdditionalDamageAmt + player.NormalAttack).ToString();
+            }
+
+        }
         // after a new creature is added update placing of all the other creatures
         ShiftSlotsGameObjectAccordingToNumberOfCreatures();
         PlaceCreaturesOnNewSlots();

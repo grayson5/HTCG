@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Renee Delaney
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
+  PicDir: 3
   Description: 'EVENT: Prevents your opponent from playing a Special card next turn.'
   Tags: 
   Rarity: 3

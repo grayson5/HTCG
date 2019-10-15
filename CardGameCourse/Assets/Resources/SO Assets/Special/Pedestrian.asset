@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Pedestrian
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
+  PicDir: 3
   Description: "SITUATION: All players cannot attack. This card is removed from play
     after your opponent\u2019s next two turns."
   Tags: 
