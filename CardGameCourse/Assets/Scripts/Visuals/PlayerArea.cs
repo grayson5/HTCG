@@ -24,6 +24,7 @@ public class PlayerArea : MonoBehaviour
     public Button PAbilityIcon;
     public Button DisarmIcon;
     public GameObject DiscardPanel;
+    public GameObject ExertPanel;
 
     public bool AllowedToControlThisPlayer
     {

@@ -9,18 +9,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41e206fc57f453a42b932de9e94caabf, type: 3}
-  m_Name: Inspiration
+  m_Name: Flashback
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 11400000, guid: 38b29af149eb525439684c0b9ae4f5ad, type: 2}
-  Description: 'EVENT: You may make an extra Exertion this turn.'
+  PicDir: 0
+  Description: 'SITUATION: You remember a similar experience. Make an extra 3 card
+    Exertion and discard this card.'
   Tags: 
   Rarity: 3
-  CardImage: {fileID: 21300000, guid: 8a282783e1708b342a3396d4074675f0, type: 3}
+  CardImage: {fileID: 21300000, guid: e14230592753ac049a830c09aa940328, type: 3}
   ManaCost: 0
   TokenCard: 0
   OverrideLimitOfThisCardInDeck: -1
   TypeOfCard: 1
-  GridImage: {fileID: 21300000, guid: 3b7f780f47e132447a7c6b458893b6cb, type: 3}
+  GridImage: {fileID: 21300000, guid: ac90da06dd6f2e542b20918526176af5, type: 3}
   GridData: 
   MaxHealth: 0
   Attack: 0
@@ -28,7 +30,7 @@ MonoBehaviour:
   Targets: 0
   CreatureScriptName: 
   specialCreatureAmount: 0
-  SpecialScriptName: AddExertion
+  SpecialScriptName: ChangeExertion
   SecondSpecialName: 
   ConditionCheckName: 
   RemoveEffectName: 
@@ -36,7 +38,7 @@ MonoBehaviour:
   PlotName: 
   ObjectName: 
   SpecialData: 
-  specialSpellAmount: 1
+  specialSpellAmount: 3
   secondSpecialAmount: 0
   AttackDefense: S
   ModifiedDamageAmt: 0
@@ -44,7 +46,7 @@ MonoBehaviour:
   TypeOfAttack: 0
   CanBePowerBlow: 0
   SpecialAction: 0
-  TypeOfSpecial: 0
+  TypeOfSpecial: 3
   SweepAttack: 0
   SweepDefense: 0
   SweepSpecial: 1

@@ -407,6 +407,7 @@ public class Player : MonoBehaviour, ICharacter
             case "D":
                 defensesplayed++;
                 //playedCard.ca.PowerAorB = false;
+                GameObject.FindWithTag("PowerButton").GetComponent<Text>().text = "Exert for Power Block";
 
                 //Now activate the Defense effect if there is one
                 if (playedCard.ca.DefenseEffectName != null &&
@@ -428,6 +429,7 @@ public class Player : MonoBehaviour, ICharacter
                 //Debug.Log("Played Guard!");
                 GuardInPlay = true;
                 PArea.ShieldIcon.image.enabled = true;
+                GameObject.FindWithTag("PowerButton").GetComponent<Text>().text = "Exert for Power Block";
                 break;
         }
 
@@ -1037,7 +1039,7 @@ public class Player : MonoBehaviour, ICharacter
         {
             currentphase = "Defense";
             GameObject.FindWithTag("ButtonText").GetComponent<Text>().text = "End Defense Phase";
-            GameObject.FindWithTag("PowerButton").GetComponent<Text>().text = "Exert for Power Block";
+            GameObject.FindWithTag("PowerButton").GetComponent<Text>().text = "Exert for Defense";
         }
 
     }
@@ -1400,12 +1402,12 @@ public class Player : MonoBehaviour, ICharacter
                         {
                             currentphase = "Defense";
                             GameObject.FindWithTag("ButtonText").GetComponent<Text>().text = "End Defense Phase";
-                            GameObject.FindWithTag("PowerButton").GetComponent<Text>().text = "Exert for Power Block";
+                            GameObject.FindWithTag("PowerButton").GetComponent<Text>().text = "Exert for Defense";
                         }
                         else if (currentphase == "Defense")
                         {
                             GameObject.FindWithTag("ButtonText").GetComponent<Text>().text = "End Defense Phase";
-                            GameObject.FindWithTag("PowerButton").GetComponent<Text>().text = "Exert for Power Block";
+                            GameObject.FindWithTag("PowerButton").GetComponent<Text>().text = "Exert for Defense";
                         }
                         else if (currentphase == "Attack")
                         {
@@ -1427,16 +1429,16 @@ public class Player : MonoBehaviour, ICharacter
                         {
                             currentphase = "Defense";
                             GameObject.FindWithTag("ButtonText").GetComponent<Text>().text = "End Defense Phase";
-                            GameObject.FindWithTag("PowerButton").GetComponent<Text>().text = "Exert for Power Block";
+                            GameObject.FindWithTag("PowerButton").GetComponent<Text>().text = "Exert for Defense";
                         }
                         HighlightPlayableCards();
                     }
                     break;
             }
         }
-        else if (table.CreaturesOnTable.Count > 0 && HardExertionsLeft > 0)
+        else if ( HardExertionsLeft > 0) //table.CreaturesOnTable.Count > 0 &&
         {
-            Debug.Log("Creature on table > 0");
+            //Debug.Log("Creature on table > 0");
             if (currentphase == "Attack")
             {
                 //Find last creature played on table
@@ -1466,6 +1468,7 @@ public class Player : MonoBehaviour, ICharacter
                         target.GetComponent<OneCreatureManager>().CardBackGlowImage.enabled = true;
                     }
                     HardExertionsLeft = hardexertionsleft - 1;
+                    NumCardsforExertion = charAsset.NumCardsForExertion;
                     otherPlayer.NextAttackHidden = true;
                     otherPlayer.PArea.HiddenIconButton1.image.enabled = true;
                 }
@@ -1474,25 +1477,39 @@ public class Player : MonoBehaviour, ICharacter
             {
                 if (currentphase == "Defense")
                 {
-                    for (int i = 0; i < table.CreaturesOnTable.Count; i++)
+                    if (defensesplayed > 0)
                     {
-                        if (table.CreaturesOnTable[i].ca.AttackDefense == "D" || table.CreaturesOnTable[i].ca.AttackDefense == "G")
+                        for (int i = 0; i < table.CreaturesOnTable.Count; i++)
                         {
-                            targetgridid = i;
+                            if (table.CreaturesOnTable[i].ca.AttackDefense == "D" || table.CreaturesOnTable[i].ca.AttackDefense == "G")
+                            {
+                                targetgridid = i;
+                            }
+                        }
+
+                        if (targetgridid >= 0)
+                        {
+                            Debug.Log("going to for loop for PowerBlock");
+                            for (int x = 0; x < NumCardsforExertion; x++)
+                                ExertACard(false);
+                            GameObject target = IDHolder.GetGameObjectWithID(table.CreaturesOnTable[targetgridid].ID);
+                            table.CreaturesOnTable[targetgridid].PowerAOrB = true;
+                            target.GetComponent<OneCreatureManager>().PowerIcon.enabled = true;
+                            target.GetComponent<OneCreatureManager>().GlowImageBlock.enabled = true;
+                            HardExertionsLeft = HardExertionsLeft - 1;
+
                         }
                     }
-
-                    if (targetgridid >= 0)
+                    else
                     {
-                        Debug.Log("going to for loop for PowerBlock");
+                        Debug.Log("going to for loop for Exert for Defense");
                         for (int x = 0; x < NumCardsforExertion; x++)
-                            ExertACard(false);
-                        GameObject target = IDHolder.GetGameObjectWithID(table.CreaturesOnTable[targetgridid].ID);
-                        table.CreaturesOnTable[targetgridid].PowerAOrB = true;
-                        target.GetComponent<OneCreatureManager>().PowerIcon.enabled = true;
-                        target.GetComponent<OneCreatureManager>().GlowImageBlock.enabled = true;
+                            ExertACard(false, "Def");
+                        //GameObject target = IDHolder.GetGameObjectWithID(table.CreaturesOnTable[targetgridid].ID);
+                        //table.CreaturesOnTable[targetgridid].PowerAOrB = true;
+                        //target.GetComponent<OneCreatureManager>().PowerIcon.enabled = true;
+                        //target.GetComponent<OneCreatureManager>().GlowImageBlock.enabled = true;
                         HardExertionsLeft = HardExertionsLeft - 1;
-
                     }
                 }
             }
@@ -1508,7 +1525,7 @@ public class Player : MonoBehaviour, ICharacter
 
     }
 
-    public void ExertACard(bool fast = false)
+    public void ExertACard(bool fast = false, string exerttype = null)
     {
         if (deck.cards.Count > 1)
         {
@@ -1520,7 +1537,14 @@ public class Player : MonoBehaviour, ICharacter
             // 2) logic: remove the card from the deck
             deck.cards.RemoveAt(0);
             // 2) create a command
-            new ExertACardCommand(discardcards.CardsInDiscard[0], this, fast, fromDeck: true).AddToQueue();
+            if (exerttype == "Power" || exerttype == null)
+            {
+                new ExertACardCommand(discardcards.CardsInDiscard[0], this, fast, fromDeck: true).AddToQueue();
+            }
+            else
+            {
+                new ExertForDefOrAtt(discardcards.CardsInDiscard[0], this, fast, exerttype, fromDeck: true).AddToQueue();
+            }
             PArea.PDeck.NumOfCardsInDeck.text = deck.cards.Count.ToString();
             // Debug.Log("After DrawACardCommand");
         }
@@ -1569,7 +1593,7 @@ public class Player : MonoBehaviour, ICharacter
                         {
                             currentphase = "Defense";
                             GameObject.FindWithTag("ButtonText").GetComponent<Text>().text = "End Defense Phase";
-                            GameObject.FindWithTag("PowerButton").GetComponent<Text>().text = "Exert for Power Block";
+                            GameObject.FindWithTag("PowerButton").GetComponent<Text>().text = "Exert for Defense";
                         }
                     }
                     Debug.Log("SavedPlayedCard Name: " + SavedPlayedCard.ca.name);
@@ -1591,7 +1615,7 @@ public class Player : MonoBehaviour, ICharacter
                         {
                             currentphase = "Defense";
                             GameObject.FindWithTag("ButtonText").GetComponent<Text>().text = "End Defense Phase";
-                            GameObject.FindWithTag("PowerButton").GetComponent<Text>().text = "Exert for Power Block";
+                            GameObject.FindWithTag("PowerButton").GetComponent<Text>().text = "Exert for Defense";
                         }
                     }
                     HighlightPlayableCards();
@@ -1606,7 +1630,7 @@ public class Player : MonoBehaviour, ICharacter
                         {
                             currentphase = "Defense";
                             GameObject.FindWithTag("ButtonText").GetComponent<Text>().text = "End Defense Phase";
-                            GameObject.FindWithTag("PowerButton").GetComponent<Text>().text = "Exert for Power Block";
+                            GameObject.FindWithTag("PowerButton").GetComponent<Text>().text = "Exert for Defense";
                         }
                     }
 
@@ -1687,7 +1711,7 @@ public class Player : MonoBehaviour, ICharacter
                 {
                     currentphase = "Defense";
                     GameObject.FindWithTag("ButtonText").GetComponent<Text>().text = "End Defense Phase";
-                    GameObject.FindWithTag("PowerButton").GetComponent<Text>().text = "Exert for Power Block";
+                    GameObject.FindWithTag("PowerButton").GetComponent<Text>().text = "Exert for Defense";
                     HighlightPlayableCards();
                 }
                 else
