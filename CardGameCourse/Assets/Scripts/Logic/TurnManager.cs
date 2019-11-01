@@ -187,7 +187,7 @@ public class TurnManager : MonoBehaviour {
         {
             whoseTurn.ProcessDefenses();
             GameObject.FindWithTag("ButtonText").GetComponent<Text>().text = "End Attack Phase";
-            GameObject.FindWithTag("PowerButton").GetComponent<Text>().text = "Exert for Power Blow";
+            GameObject.FindWithTag("PowerButton").GetComponent<Text>().text = "Exert for Attack";
             whoseTurn.currentphase = "Attack";
             whoseTurn.HighlightPlayableCards();
            // Debug.Log("trying to set PB button active");

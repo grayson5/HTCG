@@ -31,6 +31,7 @@ public class Player : MonoBehaviour, ICharacter
     public int abilitygained;
     public int EventDamage;
     public bool NextAttackHidden = false;
+    public int NumHiddenAttacks = 0;
     public bool playedSpecialCardThisTurn = false;
     public bool GuardInPlay = false;
     public bool MustOrMayAction;
@@ -199,7 +200,9 @@ public class Player : MonoBehaviour, ICharacter
 
         //If a Guard is in play at start of turn, if PB need to undo it
         if (GuardInPlay == true)
+        {
             CheckGuardForPowerBlock();
+        }
 
         if (BothPlayersCantAttackCounter > 0 || otherPlayer.BothPlayersCantAttackCounter > 0)
         {
@@ -423,7 +426,7 @@ public class Player : MonoBehaviour, ICharacter
             case "A":
                 attacksplayed++;
                 AttacksLeftThisTurn--;
-                //playedCard.ca.HiddenAttack = false;
+                GameObject.FindWithTag("PowerButton").GetComponent<Text>().text = "Exert for Power Blow";
                 break;
             case "G":
                 //Debug.Log("Played Guard!");
@@ -1412,7 +1415,7 @@ public class Player : MonoBehaviour, ICharacter
                         else if (currentphase == "Attack")
                         {
                             GameObject.FindWithTag("ButtonText").GetComponent<Text>().text = "End Attack Phase";
-                            GameObject.FindWithTag("PowerButton").GetComponent<Text>().text = "Exert for Power Blow";
+                            GameObject.FindWithTag("PowerButton").GetComponent<Text>().text = "Exert for Attack";
                         }
                         HighlightPlayableCards();
                     }                  
@@ -1472,6 +1475,13 @@ public class Player : MonoBehaviour, ICharacter
                     otherPlayer.NextAttackHidden = true;
                     otherPlayer.PArea.HiddenIconButton1.image.enabled = true;
                 }
+                else
+                {
+                    Debug.Log("going to for loop for Exert for Attack");
+                    for (int x = 0; x < NumCardsforExertion; x++)
+                        ExertACard(false, "Att");
+                    HardExertionsLeft = HardExertionsLeft - 1;
+                }
             }
             else
             {
@@ -1505,10 +1515,6 @@ public class Player : MonoBehaviour, ICharacter
                         Debug.Log("going to for loop for Exert for Defense");
                         for (int x = 0; x < NumCardsforExertion; x++)
                             ExertACard(false, "Def");
-                        //GameObject target = IDHolder.GetGameObjectWithID(table.CreaturesOnTable[targetgridid].ID);
-                        //table.CreaturesOnTable[targetgridid].PowerAOrB = true;
-                        //target.GetComponent<OneCreatureManager>().PowerIcon.enabled = true;
-                        //target.GetComponent<OneCreatureManager>().GlowImageBlock.enabled = true;
                         HardExertionsLeft = HardExertionsLeft - 1;
                     }
                 }
@@ -1527,23 +1533,25 @@ public class Player : MonoBehaviour, ICharacter
 
     public void ExertACard(bool fast = false, string exerttype = null)
     {
+        Debug.Log("In ExertACard");
         if (deck.cards.Count > 1)
         {
             CardLogic newdisCard = new CardLogic(deck.cards[0]);
             newdisCard.owner = this;
-            discardcards.CardsInDiscard.Insert(0, newdisCard);
-            Debug.Log("In ExertACard");
+            //discardcards.CardsInDiscard.Insert(0, newdisCard);
+            Debug.Log("In ExertACard 2");
             // Debug.Log(hand.CardsInHand.Count);
             // 2) logic: remove the card from the deck
             deck.cards.RemoveAt(0);
             // 2) create a command
             if (exerttype == "Power" || exerttype == null)
             {
+                discardcards.CardsInDiscard.Insert(0, newdisCard);
                 new ExertACardCommand(discardcards.CardsInDiscard[0], this, fast, fromDeck: true).AddToQueue();
             }
             else
             {
-                new ExertForDefOrAtt(discardcards.CardsInDiscard[0], this, fast, exerttype, fromDeck: true).AddToQueue();
+                new ExertForDefOrAtt(newdisCard, this, fast, exerttype, fromDeck: true).AddToQueue();
             }
             PArea.PDeck.NumOfCardsInDeck.text = deck.cards.Count.ToString();
             // Debug.Log("After DrawACardCommand");
@@ -1832,17 +1840,22 @@ public class Player : MonoBehaviour, ICharacter
     public void CheckGuardForPowerBlock()
     {
         Debug.Log("In CheckGuardForPowerBlock");
+
         for (int i = table.CreaturesOnTable.Count; i > 0; i--)
         {
-            if (table.CreaturesOnTable[i - 1].ca.AttackDefense == "G" && table.CreaturesOnTable[i-1].PowerAOrB == true)
+            if (table.CreaturesOnTable[i - 1].ca.AttackDefense == "G" && table.CreaturesOnTable[i - 1].PowerAOrB == true)
             {
                 table.CreaturesOnTable[i - 1].PowerAOrB = false;
-                GameObject target = IDHolder.GetGameObjectWithID(table.CreaturesOnTable[i-1].ID);
+                GameObject target = IDHolder.GetGameObjectWithID(table.CreaturesOnTable[i - 1].ID);
                 target.GetComponent<OneCreatureManager>().PowerIcon.enabled = false;
                 target.GetComponent<OneCreatureManager>().GlowImageBlock.enabled = false;
+                GameObject.FindWithTag("PowerButton").GetComponent<Text>().text = "Exert for Power Block";
+            }
+            else if (table.CreaturesOnTable[i - 1].ca.AttackDefense == "G")
+            {
+                GameObject.FindWithTag("PowerButton").GetComponent<Text>().text = "Exert for Power Block";
             }
         }
-
     }
 
     public void EvaluteDiceRoll()

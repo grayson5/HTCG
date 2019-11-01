@@ -21,8 +21,8 @@ public class ExertForDefOrAtt : Command {
     public override void StartCommandExecution()
     {
         p.PArea.PDeck.CardsInDeck--;
-        //p.PArea.discardVisual.GiveDiscardACard(cl.ca, cl.UniqueCardID, fast, fromDeck);
+        
         p.PArea.ExertPanel.SetActive(true);
-        p.PArea.ExertPanel.GetComponentInChildren<ExertListControl>().AddExertCardToList(cl.ca, cl.UniqueCardID);
+        p.PArea.ExertPanel.GetComponentInChildren<ExertListControl>().AddExertCardToList(cl.UniqueCardID, cl, exerttype);
     }
 }

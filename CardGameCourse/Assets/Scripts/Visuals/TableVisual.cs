@@ -122,8 +122,15 @@ public class TableVisual : MonoBehaviour
         {
             Debug.Log("Turn card over to back for hidden attack");
             creature.transform.SetPositionAndRotation(new Vector3(transform.position.x, transform.position.y + .5f, transform.position.z), Quaternion.Euler(new Vector3(0, -180, 0)));
-            TurnManager.Instance.whoseTurn.NextAttackHidden = false;
-            TurnManager.Instance.whoseTurn.PArea.HiddenIconButton1.image.enabled = false;
+            if (TurnManager.Instance.whoseTurn.NumHiddenAttacks == 0)
+            {
+                TurnManager.Instance.whoseTurn.NextAttackHidden = false;
+                TurnManager.Instance.whoseTurn.PArea.HiddenIconButton1.image.enabled = false;
+            }
+            else
+            {
+                TurnManager.Instance.whoseTurn.NumHiddenAttacks--;
+            }
             creature.GetComponent<OneCreatureManager>().AttackText.enabled = false;
         }
         if (ca.AttackDefense == "D" || ca.AttackDefense == "G" || ca.AttackDefense == "D")

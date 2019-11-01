@@ -10,6 +10,7 @@ public class HideExertList : MonoBehaviour
     public void HideExertPanel()
     {
         Debug.Log("Mouse Down");
+        PArea.ExertPanel.GetComponentInChildren<ExertListControl>().AddExertCardToTable();
         PArea.ExertPanel.SetActive(false);
     }
 }

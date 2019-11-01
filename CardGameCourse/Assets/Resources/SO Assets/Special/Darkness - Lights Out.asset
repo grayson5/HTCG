@@ -30,7 +30,7 @@ MonoBehaviour:
   Targets: 0
   CreatureScriptName: 
   specialCreatureAmount: 1
-  SpecialScriptName: 
+  SpecialScriptName: AddHiddenAttacksAndRemoveCards
   SecondSpecialName: 
   ConditionCheckName: CheckForSpecificPlots
   RemoveEffectName: 

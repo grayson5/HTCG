@@ -7,13 +7,18 @@ public class ExertCardList : MonoBehaviour {
     [SerializeField]
     private Image cardimage;
     public int cardID;
+    //public CardAsset ca;
+    public Player p;
+    public Discard discarddeck;
+    public CardLogic cl;
 
-    public void SetImage(string cardname, PicDirectory picdir, int cid)
+    public void SetImage(string cardname, PicDirectory picdir, int cid, CardLogic si_cl)
     {
         Debug.Log("Trying to Load: " + picdir+"/"+cardname);
         cardimage.sprite = Resources.Load<Sprite>("Card Pics/Fullpics/"+picdir+"/"+cardname);
         cardID = cid;
-           
+        //ca = si_ca;
+        cl = si_cl;
     }
 
     public void SelectCard()
@@ -48,5 +53,21 @@ public class ExertCardList : MonoBehaviour {
         //else
         //    button.GetComponentInChildren<Text>().fontSize = 0;
 
+    }
+
+    public void AddCardToTable()
+    {
+        Debug.Log("In AddExertCardToTable");
+        Debug.Log("Name: " + cl.ca.name);
+        Debug.Log("Position: " + p.table.CreaturesOnTable.Count);
+        //Get table position and add selected card to table
+        p.PlayAttackDefenseFromHand(cardID, p.table.CreaturesOnTable.Count);
+
+    }
+
+    public void AddCardToDiscard()
+    {
+        if (cardID != 0)
+            discarddeck.CardsInDiscard.Insert(0, cl);
     }
 }
